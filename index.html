@@ -20,20 +20,23 @@
         /* Make the demo a little prettier */
         body {
             margin-top: 20px;
-            background: #222;
+            background: #817F7F;
             text-align: center;
-            color: #aaa;
+            color: #000000;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: radial-gradient(#333, hsl(200,30%,6%) );
+            background: radial-gradient(#aaa, hsl(200,30%,6%) );
         }
         a, a:hover, a:visited { color: #76DAFF; }
-        .video-js { color: #FF0000; }
-        .video-js .vjs-play-progress { background: #FF0000; }
+        .video-js { color: #6666FF; }
+        .video-js .vjs-play-progress { background: #6666FF; }
         .video-js{margin: auto;}
     </style>
 
 </head>
 <body>
+<div style="color:lightblue">
+    <h1>HTML5 Multimedia</h1>
+</div>
 
 <video id="demovideo" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" preload="auto" controls></video>
 <div>
@@ -104,7 +107,7 @@
     <button onclick="document.getElementById('demo3').currentTime = 0;document.getElementById('demo3').pause()">Stop (End)</button>
 </div><br />
 
-<a href="https://developer.mozilla.org/es/docs/Web/HTML/Usando_audio_y_video_con_HTML5">Més info</a>
+
 
 
 <script src="http://vjs.zencdn.net/5.4.4/video.js"></script>
