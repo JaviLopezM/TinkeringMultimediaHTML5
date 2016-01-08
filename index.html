@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Tinkering with HTML 5 support</title>
+
+    <link href="http://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>
+
+    <style>
+        /* Show the controls (hidden at the start by default) */
+        .video-js .vjs-control-bar {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        /* Make the demo a little prettier */
+        body {
+            margin-top: 20px;
+            background: #222;
+            text-align: center;
+            color: #aaa;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: radial-gradient(#333, hsl(200,30%,6%) );
+        }
+        a, a:hover, a:visited { color: #76DAFF; }
+        .video-js { color: #FF0000; }
+        .video-js .vjs-play-progress { background: #FF0000; }
+        .video-js{margin: auto;}
+    </style>
+
 </head>
 <body>
 
 <video id="demovideo" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" preload="auto" controls></video>
-
 <div>
     <button onclick="document.getElementById('demovideo').play()">Reproducir video</button>
     <button onclick="document.getElementById('demovideo').pause()">Pausar el video</button>
     <button onclick="document.getElementById('demovideo').volume+=0.1">Aumentar el Volumen</button>
     <button onclick="document.getElementById('demovideo').volume-=0.1">Disminuir el Volumen</button>
-</div>
+    <button onclick="document.getElementById('demovideo').currentTime +=5">Forward</button>
+    <button onclick="document.getElementById('demovideo').currentTime -=5">Rewind</button>
+    <button onclick="document.getElementById('demovideo').currentTime = 0">Restart</button>
+    <button onclick="document.getElementById('demovideo').currentTime = 0;document.getElementById('demovideo').pause()">Stop (End)</button>
+</div><br />
+
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="360"
+       data-setup='{"playbackRates": [1, 1.5, 2] }'>
+    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type='video/mp4'>
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video><br />
 
 <div class="test">Back in black:</div>
 
@@ -24,7 +65,11 @@
     <button onclick="document.getElementById('demo').pause()">Pausar el Audio</button>
     <button onclick="document.getElementById('demo').volume+=0.1">Aumentar el Volumen</button>
     <button onclick="document.getElementById('demo').volume-=0.1">Disminuir el Volumen</button>
-</div>
+    <button onclick="document.getElementById('demo').currentTime +=5">Forward</button>
+    <button onclick="document.getElementById('demo').currentTime -=5">Rewind</button>
+    <button onclick="document.getElementById('demo').currentTime = 0">Restart</button>
+    <button onclick="document.getElementById('demo').currentTime = 0;document.getElementById('demo').pause()">Stop (End)</button>
+</div><br />
 
 
 
@@ -37,7 +82,11 @@
     <button onclick="document.getElementById('demo2').pause()">Pausar el Audio</button>
     <button onclick="document.getElementById('demo2').volume+=0.1">Aumentar el Volumen</button>
     <button onclick="document.getElementById('demo2').volume-=0.1">Disminuir el Volumen</button>
-</div>
+    <button onclick="document.getElementById('demo2').currentTime +=5">Forward</button>
+    <button onclick="document.getElementById('demo2').currentTime -=5">Rewind</button>
+    <button onclick="document.getElementById('demo2').currentTime = 0">Restart</button>
+    <button onclick="document.getElementById('demo2').currentTime = 0;document.getElementById('demo2').pause()">Stop (End)</button>
+</div><br />
 
 <div class="test">Audio Bullet in the head:</div>
 
@@ -49,9 +98,15 @@
     <button onclick="document.getElementById('demo3').pause()">Pausar el Audio</button>
     <button onclick="document.getElementById('demo3').volume+=0.1">Aumentar el Volumen</button>
     <button onclick="document.getElementById('demo3').volume-=0.1">Disminuir el Volumen</button>
-</div>
+    <button onclick="document.getElementById('demo3').currentTime +=5">Forward</button>
+    <button onclick="document.getElementById('demo3').currentTime -=5">Rewind</button>
+    <button onclick="document.getElementById('demo3').currentTime = 0">Restart</button>
+    <button onclick="document.getElementById('demo3').currentTime = 0;document.getElementById('demo3').pause()">Stop (End)</button>
+</div><br />
 
 <a href="https://developer.mozilla.org/es/docs/Web/HTML/Usando_audio_y_video_con_HTML5">Més info</a>
 
+
+<script src="http://vjs.zencdn.net/5.4.4/video.js"></script>
 </body>
 </html>
